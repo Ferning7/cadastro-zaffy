@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace cadastro.UserControls
 {
-    public partial class UC_Login : UserControl
+    public partial class UC_Cadastro: UserControl
     {
-        public UC_Login()
+        public UC_Cadastro()
         {
             InitializeComponent();
-        }
-
-        private void pbEyeClosed_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

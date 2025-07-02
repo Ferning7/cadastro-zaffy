@@ -1,8 +1,8 @@
 namespace cadastro
 {
-    public partial class Form1 : Form
+    public partial class Conteudo : Form
     {
-        public Form1()
+        public Conteudo()
         {
             InitializeComponent();
         }
