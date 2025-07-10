@@ -15,10 +15,8 @@ namespace cadastro.UserControls
         public UC_Login()
         {
             InitializeComponent();
+            txtSenha.UseSystemPasswordChar = true;
         }
-
-
-
 
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -37,11 +35,13 @@ namespace cadastro.UserControls
 
         private void pbEyeOpen_Click(object sender, EventArgs e)
         {
-
+            txtSenha.UseSystemPasswordChar = true;
+            pbEyeClosed.Visible = true;
         }
         private void pbEyeClosed_Click(object sender, EventArgs e)
         {
-
+            txtSenha.UseSystemPasswordChar = false;
+            pbEyeClosed.Visible = false;
         }
     }
 }

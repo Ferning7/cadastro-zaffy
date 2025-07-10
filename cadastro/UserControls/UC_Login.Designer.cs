@@ -93,7 +93,6 @@
             linkLabel2.TabIndex = 18;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Cadastre-se";
- 
             // 
             // linkEsqueciSenha
             // 
@@ -111,8 +110,9 @@
             // 
             // pbEyeClosed
             // 
+            pbEyeClosed.Cursor = Cursors.Hand;
             pbEyeClosed.Image = Properties.Resources.icons8_invisível_32;
-            pbEyeClosed.Location = new Point(338, 235);
+            pbEyeClosed.Location = new Point(338, 269);
             pbEyeClosed.Name = "pbEyeClosed";
             pbEyeClosed.Size = new Size(31, 28);
             pbEyeClosed.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -185,6 +185,7 @@
             // 
             // pbEyeOpen
             // 
+            pbEyeOpen.Cursor = Cursors.Hand;
             pbEyeOpen.Image = Properties.Resources.icons8_visível_32;
             pbEyeOpen.Location = new Point(338, 269);
             pbEyeOpen.Name = "pbEyeOpen";
