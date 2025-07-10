@@ -1,6 +1,6 @@
 ﻿namespace cadastro.UserControls
 {
-    partial class UC_EsqueciSenha
+    partial class UC_Home
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -35,18 +35,18 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 26F);
-            label1.Location = new Point(237, 198);
+            label1.Location = new Point(224, 190);
             label1.Name = "label1";
-            label1.Size = new Size(269, 47);
-            label1.TabIndex = 0;
-            label1.Text = "Esqueci a Senha";
+            label1.Size = new Size(114, 47);
+            label1.TabIndex = 1;
+            label1.Text = "Home";
             // 
-            // UC_EsqueciSenha
+            // UC_Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
-            Name = "UC_EsqueciSenha";
+            Name = "UC_Home";
             Size = new Size(800, 493);
             ResumeLayout(false);
             PerformLayout();

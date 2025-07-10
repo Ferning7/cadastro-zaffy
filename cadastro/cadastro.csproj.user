@@ -10,6 +10,9 @@
     <Compile Update="UserControls\UC_EsqueciSenha.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\UC_Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
