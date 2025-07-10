@@ -43,5 +43,12 @@ namespace cadastro.UserControls
             txtSenha.UseSystemPasswordChar = false;
             pbEyeClosed.Visible = false;
         }
+
+        private void linkCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            UC_Cadastro cadastro = new UC_Cadastro();
+            this.Controls.Clear();
+            this.Controls.Add(cadastro);
+        }
     }
 }

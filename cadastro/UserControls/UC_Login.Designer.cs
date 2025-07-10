@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Login));
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
-            linkLabel2 = new LinkLabel();
+            linkCadastro = new LinkLabel();
             linkEsqueciSenha = new LinkLabel();
             pbEyeClosed = new PictureBox();
             btnLogin = new Button();
@@ -67,7 +67,7 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.FromArgb(115, 76, 191);
-            panel1.Controls.Add(linkLabel2);
+            panel1.Controls.Add(linkCadastro);
             panel1.Controls.Add(linkEsqueciSenha);
             panel1.Controls.Add(pbEyeClosed);
             panel1.Controls.Add(btnLogin);
@@ -82,17 +82,18 @@
             panel1.Size = new Size(405, 501);
             panel1.TabIndex = 10;
             // 
-            // linkLabel2
+            // linkCadastro
             // 
-            linkLabel2.ActiveLinkColor = Color.FromArgb(192, 255, 255);
-            linkLabel2.AutoSize = true;
-            linkLabel2.LinkColor = Color.White;
-            linkLabel2.Location = new Point(170, 411);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(69, 15);
-            linkLabel2.TabIndex = 18;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Cadastre-se";
+            linkCadastro.ActiveLinkColor = Color.FromArgb(192, 255, 255);
+            linkCadastro.AutoSize = true;
+            linkCadastro.LinkColor = Color.White;
+            linkCadastro.Location = new Point(170, 408);
+            linkCadastro.Name = "linkCadastro";
+            linkCadastro.Size = new Size(69, 15);
+            linkCadastro.TabIndex = 5;
+            linkCadastro.TabStop = true;
+            linkCadastro.Text = "Cadastre-se";
+            linkCadastro.LinkClicked += linkCadastro_LinkClicked;
             // 
             // linkEsqueciSenha
             // 
@@ -102,7 +103,7 @@
             linkEsqueciSenha.Location = new Point(78, 299);
             linkEsqueciSenha.Name = "linkEsqueciSenha";
             linkEsqueciSenha.Size = new Size(91, 15);
-            linkEsqueciSenha.TabIndex = 17;
+            linkEsqueciSenha.TabIndex = 3;
             linkEsqueciSenha.TabStop = true;
             linkEsqueciSenha.Text = "Esqueci a Senha";
             linkEsqueciSenha.VisitedLinkColor = Color.FromArgb(128, 128, 255);
@@ -126,10 +127,10 @@
             btnLogin.FlatStyle = FlatStyle.Popup;
             btnLogin.Font = new Font("Century Gothic", 13F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(149, 372);
+            btnLogin.Location = new Point(149, 369);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(107, 36);
-            btnLogin.TabIndex = 6;
+            btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
@@ -140,7 +141,7 @@
             txtSenha.Location = new Point(78, 267);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(251, 29);
-            txtSenha.TabIndex = 4;
+            txtSenha.TabIndex = 2;
             // 
             // label3
             // 
@@ -159,7 +160,7 @@
             txtLogin.Location = new Point(78, 193);
             txtLogin.Name = "txtLogin";
             txtLogin.Size = new Size(251, 29);
-            txtLogin.TabIndex = 2;
+            txtLogin.TabIndex = 1;
             // 
             // label2
             // 
@@ -211,7 +212,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(41, 271);
+            label5.Location = new Point(49, 265);
             label5.Name = "label5";
             label5.Size = new Size(188, 16);
             label5.TabIndex = 12;
@@ -220,9 +221,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Protótipo_de_Baixa_Fidelidade1;
-            pictureBox1.Location = new Point(29, 103);
+            pictureBox1.Location = new Point(31, 89);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(336, 274);
+            pictureBox1.Size = new Size(336, 300);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
@@ -265,7 +266,7 @@
         private PictureBox pictureBox1;
         private PictureBox pbEyeClosed;
         private PictureBox pbEyeOpen;
-        private LinkLabel linkLabel2;
+        private LinkLabel linkCadastro;
         private LinkLabel linkEsqueciSenha;
     }
 }
