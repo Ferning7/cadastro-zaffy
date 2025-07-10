@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace cadastro
 {
-    class Usuarios
+    public class Usuarios
     {
-
+        private string nome;
+        private string email;
+        private string senha;
+        
     }
 }

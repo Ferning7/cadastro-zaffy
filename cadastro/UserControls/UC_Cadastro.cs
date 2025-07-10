@@ -39,5 +39,12 @@ namespace cadastro.UserControls
             txtSenha.UseSystemPasswordChar = true;
             pbEyeClosed.Visible = true;
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            UC_Login login = new UC_Login();
+            this.Controls.Clear();
+            this.Controls.Add(login);
+        }
     }
 }

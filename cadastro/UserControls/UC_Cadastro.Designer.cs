@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            linkLogin = new LinkLabel();
             txtSenha = new TextBox();
             label4 = new Label();
             pbEyeClosed = new PictureBox();
@@ -40,7 +41,6 @@
             label1 = new Label();
             pbEyeOpen = new PictureBox();
             pictureBox1 = new PictureBox();
-            linkLogin = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbEyeClosed).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbEyeOpen).BeginInit();
@@ -66,6 +66,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(405, 501);
             panel1.TabIndex = 3;
+            // 
+            // linkLogin
+            // 
+            linkLogin.ActiveLinkColor = Color.FromArgb(192, 255, 255);
+            linkLogin.AutoSize = true;
+            linkLogin.LinkColor = Color.White;
+            linkLogin.Location = new Point(154, 428);
+            linkLogin.Name = "linkLogin";
+            linkLogin.Size = new Size(91, 15);
+            linkLogin.TabIndex = 5;
+            linkLogin.TabStop = true;
+            linkLogin.Text = "Já possuo conta";
             // 
             // txtSenha
             // 
@@ -110,6 +122,7 @@
             btnCadastrar.TabIndex = 4;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // txtEmail
             // 
@@ -181,18 +194,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
-            // 
-            // linkLogin
-            // 
-            linkLogin.ActiveLinkColor = Color.FromArgb(192, 255, 255);
-            linkLogin.AutoSize = true;
-            linkLogin.LinkColor = Color.White;
-            linkLogin.Location = new Point(154, 428);
-            linkLogin.Name = "linkLogin";
-            linkLogin.Size = new Size(91, 15);
-            linkLogin.TabIndex = 5;
-            linkLogin.TabStop = true;
-            linkLogin.Text = "Já possuo conta";
             // 
             // UC_Cadastro
             // 
