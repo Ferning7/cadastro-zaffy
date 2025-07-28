@@ -12,7 +12,7 @@ namespace cadastro.UserControls
 {
     public partial class UC_Home: UserControl
     {
-        public UC_Home()
+        public UC_Home(string nome, UserControl tela)
         {
             InitializeComponent();
         }

@@ -7,6 +7,7 @@ namespace cadastro
 
         bool mouseDown;
         Point lastLocation;
+
         public Conteudo()
         {
             InitializeComponent();

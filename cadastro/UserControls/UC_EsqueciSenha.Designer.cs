@@ -67,10 +67,11 @@
             // 
             linkLogin.ActiveLinkColor = Color.FromArgb(192, 255, 255);
             linkLogin.AutoSize = true;
+            linkLogin.Font = new Font("Segoe UI", 11F);
             linkLogin.LinkColor = Color.White;
-            linkLogin.Location = new Point(183, 408);
+            linkLogin.Location = new Point(182, 408);
             linkLogin.Name = "linkLogin";
-            linkLogin.Size = new Size(37, 15);
+            linkLogin.Size = new Size(46, 20);
             linkLogin.TabIndex = 5;
             linkLogin.TabStop = true;
             linkLogin.Text = "Login";

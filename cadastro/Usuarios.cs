@@ -14,7 +14,7 @@ namespace cadastro
         private string nome;
         private string email;
         private string senha;
-        
+
         public string Nome
         {
             get { return nome; }
@@ -102,6 +102,77 @@ namespace cadastro
             }
         }
 
+        public string BuscarNome()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string senhaCripto = CriptografarSenha(Senha);
+
+                    string buscarNome = "SELECT nome FROM usuarios WHERE email = @email and senha = @senha";
+                    MySqlCommand comando = new MySqlCommand(buscarNome, conexao);
+
+                    comando.Parameters.AddWithValue("@email", Email);
+                    comando.Parameters.AddWithValue("@senha", senhaCripto);
+
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        return resultado.ToString();
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível buscar o nome do usuário!" + ex.Message);
+                return "";
+            }
+        }
+
+        public bool MudarSenha()
+        {
+            try
+            {
+                using (MySqlConnection conexaoBanco = new ConexaoBD().Conectar())
+                {
+                    string senhaCripto = CriptografarSenha(Senha);
+                    string sqlUpdate = "UPDATE usuarios SET senha = @senha WHERE email = @email";
+
+                    MySqlCommand comando = new MySqlCommand(sqlUpdate, conexaoBanco);
+
+
+                    comando.Parameters.AddWithValue("@senha", senhaCripto);
+                    comando.Parameters.AddWithValue("@email", Email);
+
+                    int resultado = comando.ExecuteNonQuery();
+                    if (resultado > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar usuário ->" + ex.Message);
+                return false;
+            }
+        }
+
+
+
+
+        // FUNCÕES DE SEGURANÇA
         public static string CriptografarSenha(string senha)
         {
             try
@@ -132,6 +203,33 @@ namespace cadastro
             return regex.IsMatch(email);
         }
 
-       
+        public bool verificarEmailExistente()
+        {
+            try
+            {
+                using (MySqlConnection conexaoBanco = new ConexaoBD().Conectar())
+                {
+                    string sqlconsultaEmail = "select COUNT(*) from usuarios where email = @email ";
+
+                    MySqlCommand comando = new MySqlCommand(sqlconsultaEmail, conexaoBanco);
+                    comando.Parameters.AddWithValue("@email", Email);
+
+                    int resultado = Convert.ToInt32(comando.ExecuteScalar());
+                    if (resultado > 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao verificar email {ex.Message}");
+                return false;
+            }
+        }
     }
 }

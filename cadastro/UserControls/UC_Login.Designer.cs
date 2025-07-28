@@ -169,9 +169,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(78, 170);
             label2.Name = "label2";
-            label2.Size = new Size(138, 23);
+            label2.Size = new Size(61, 23);
             label2.TabIndex = 1;
-            label2.Text = "Usuário/Email";
+            label2.Text = "Email";
             // 
             // label1
             // 

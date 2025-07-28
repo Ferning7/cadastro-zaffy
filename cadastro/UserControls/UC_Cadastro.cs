@@ -42,9 +42,53 @@ namespace cadastro.UserControls
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            UC_Login login = new UC_Login();
-            this.Controls.Clear();
-            this.Controls.Add(login);
+            try
+            {
+                if (!txtEmail.Text.Equals("") && !txtNomeUsuario.Text.Equals("") && !txtSenha.Text.Equals(""))
+                {
+                    Usuarios usuarios = new Usuarios();
+                    usuarios.Nome = txtNomeUsuario.Text;
+                    usuarios.Email = txtEmail.Text;
+                    usuarios.Senha = txtSenha.Text;
+
+                    if (Usuarios.ValidarEmail(txtEmail.Text))
+                    {
+                        if (usuarios.verificarEmailExistente())
+                        {
+                            if (usuarios.CadastrarUsuario())
+                            {
+                                MessageBox.Show("Cadastro realizado" + MessageBoxButtons.OK);
+
+                                UC_Login login = new UC_Login();
+                                this.Controls.Clear();
+                                this.Controls.Add(login);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Falha ao cadastrar usuário");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Email já cadastrado!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Email inválido ou incorreto");
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Preencha todos os campos corretamente!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex.Message);
+            }
+
         }
     }
 }
